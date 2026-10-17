@@ -1,0 +1,4 @@
+interface:
+  display_name: "ResearchMode 科研模式"
+  short_description: "Inspect Windows apps and review a temporary research mode"
+  default_prompt: "使用 $research-mode 扫描当前 Windows 电脑，为 Python/PyTorch 训练准备可审查、可尝试恢复的科研模式方案。"

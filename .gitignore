@@ -1,0 +1,14 @@
+# Runtime data is kept outside the repository by default.
+.researchmode/
+local-data/
+reports/
+plans/
+sessions/
+approvals.json
+*.log
+*.zip
+TestResults.xml
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,16 @@
+[
+  {"id":"wallpaper-engine","executables":["wallpaper32.exe","wallpaper64.exe"],"classification":"candidate","methods":["close","terminate"],"reason":"动态壁纸。训练时可审查后退出；正常关窗可能只缩到托盘。强制退出需单独选择。"},
+  {"id":"phone-link","executables":["PhoneExperienceHost.exe","YourPhoneAppProxyHost.exe","CrossDeviceService.exe"],"classification":"candidate","methods":["close","terminate"],"reason":"手机连接及跨设备功能；不用手机联动时可考虑退出，系统可能自动重启。"},
+  {"id":"task-manager","executables":["Taskmgr.exe"],"classification":"candidate","methods":["close"],"reason":"任务管理器。查看完可关闭，需要监测训练时保留。"},
+  {"id":"snipaste","executables":["snipaste.exe"],"classification":"review","methods":["close","terminate"],"reason":"截图和贴图工具。先保存需要的截图或贴图，确认后退出。"},
+  {"id":"pc-manager","executables":["MSPCManagerService.exe","MSPCManager.exe","LenovoTray.exe","LenovoPcManagerService.exe","LenovoToolMonitoring.exe","ResScheduler.exe"],"classification":"review","methods":["close"],"reason":"电脑管家或其监测、调度组件。优先通过软件正常退出；服务需另外审查依赖和影响。"},
+  {"id":"legion-zone","executables":["LegionZone.exe","LZTray.exe","LZService.exe"],"classification":"review","methods":["close"],"reason":"联想拯救姬相关组件，可能涉及性能与散热设置。先核实具体功能。"},
+  {"id":"tobii","executables":["platform_runtime_RGB_service.exe"],"classification":"review","methods":["service"],"reason":"Tobii 感知功能，不应仅因名称带 RGB 就当作灯效程序。眼动、在场感知研究需要保留。"},
+  {"id":"nahimic","executables":["NahimicService.exe","Nahimic3.exe","NahimicSvc32.exe","NahimicSvc64.exe"],"classification":"review","methods":["close"],"reason":"Nahimic 增强音效组件。音频或录音研究可能需要，先确认。"},
+  {"id":"kaspersky","executables":["avp.exe","avpui.exe"],"classification":"manual","methods":[],"reason":"卡巴斯基。用户可以审查后选择临时暂停／退出；本版通过厂商界面手动操作，不强杀受保护服务。暂停防护不等于退出，也不保证释放内存。"},
+  {"id":"security-tools","executables":["MsMpEng.exe","NisSrv.exe","usysdiag.exe","SangforUDProtectEx.exe","SangforPWEx.exe","SangforPromoteService.exe"],"classification":"manual","methods":[],"reason":"安全或机构网络组件。默认保留；用户可选择厂商支持的手动操作，并记录恢复方式。"},
+  {"id":"network","executables":["Clash for Windows.exe","clash-win64.exe","clash.exe","mihomo.exe","RvControlSvc.exe","ssh.exe","sshd.exe","tailscaled.exe"],"classification":"keep","methods":["close"],"reason":"代理、VPN 或远程连接可能用于下载模型、访问校园网及服务器，科研模式默认保留。"},
+  {"id":"editors","executables":["Code.exe","pycharm64.exe","WindowsTerminal.exe","wezterm-gui.exe"],"classification":"keep","methods":["close"],"reason":"编辑器或终端可能有科研任务和未保存内容，默认保留。"},
+  {"id":"assistant","executables":["ChatGPT.exe","codex.exe"],"classification":"keep","methods":["close"],"reason":"当前 AI 助手及运行组件。仅在不需要它时考虑正常退出；如果属于本工具执行链则禁止操作。"},
+  {"id":"input-method","executables":["wetype_server.exe","wetype_renderer.exe","wetype_update.exe","MetasequoiaImeServer.exe"],"classification":"keep","methods":["close"],"reason":"输入法或其更新组件；关闭可能影响输入。先核实具体组件，不批量结束 WebView2。"}
+]

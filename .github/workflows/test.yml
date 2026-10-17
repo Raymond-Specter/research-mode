@@ -1,0 +1,20 @@
+name: Windows tests
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Windows PowerShell 5.1
+        shell: powershell
+        run: ./tests/Test-ResearchMode.ps1
+      - name: PowerShell 7
+        shell: pwsh
+        run: ./tests/Test-ResearchMode.ps1
+      - name: Check whitespace
+        shell: pwsh
+        run: git diff --check
